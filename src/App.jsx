@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase.jsx";
 import "./App.css";
+import logo from "./gfg_logo.png";
 
 const GOAL = 500;
 const DEBOUNCE = 300;
@@ -166,7 +167,7 @@ function App() {
       )}
 
       <div className="content">
-        <img src="./gfg.png" alt="Club Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
         <h1 className="title">Club Inauguration</h1>
         <p className="subtitle">Join the collective effort!</p>
 
