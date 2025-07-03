@@ -166,7 +166,7 @@ function App() {
       )}
 
       <div className="content">
-        <img src="../logo.png" alt="Club Logo" className="logo" />
+        <img src="./gfg.png" alt="Club Logo" className="logo" />
         <h1 className="title">Club Inauguration</h1>
         <p className="subtitle">Join the collective effort!</p>
 
