@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { doc, getDoc, setDoc, onSnapshot, serverTimestamp } from "firebase/firestore";
-import { db } from "./firebase";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  onSnapshot,
+  serverTimestamp,
+} from "firebase/firestore";
+import { db } from "./firebase.jsx";
 import "./App.css";
 
 const GOAL = 500;
@@ -48,7 +54,7 @@ function App() {
           const value = data.value || 0;
           setCount(value);
           progressAnim.current = Math.min(value / GOAL, 1);
-          
+
           if (value >= GOAL && !completed) {
             setCompleted(true);
             setShowConfetti(true);
@@ -145,7 +151,7 @@ function App() {
       {showConfetti && (
         <div className="confetti-container">
           {[...Array(100)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="confetti"
               style={{
@@ -160,11 +166,7 @@ function App() {
       )}
 
       <div className="content">
-        <img 
-          src="\logo.png" 
-          alt="Club Logo" 
-          className="logo"
-        />
+        <img src="\logo.png" alt="Club Logo" className="logo" />
         <h1 className="title">Club Inauguration</h1>
         <p className="subtitle">Join the collective effort!</p>
 
@@ -175,7 +177,9 @@ function App() {
           style={{ transform: `scale(${buttonScale.current})` }}
         >
           <div className="button-content">
-            <div className={`button-main-text ${completed ? "completed-text" : ""}`}>
+            <div
+              className={`button-main-text ${completed ? "completed-text" : ""}`}
+            >
               {completed ? "Powered!" : "Power Up"}
             </div>
             {!completed && <div className="button-sub-text">Tap to Power</div>}
@@ -184,8 +188,8 @@ function App() {
 
         <div className="progress-container">
           <div className="progress-bar">
-            <div 
-              className="progress-fill" 
+            <div
+              className="progress-fill"
               style={{ width: `${progressAnim.current * 100}%` }}
             />
           </div>
