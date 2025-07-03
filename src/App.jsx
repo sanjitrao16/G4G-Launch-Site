@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase.jsx";
 import "./App.css";
-import logo from "./gfg_logo.png";
+import logo from "./assets/gfg_logo.png";
 
 const GOAL = 500;
 const DEBOUNCE = 300;
